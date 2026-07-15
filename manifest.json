@@ -1,0 +1,9 @@
+{
+  "id": "lotus-ai",
+  "name": "Lotus",
+  "version": "1.6.0",
+  "minAppVersion": "1.11.4",
+  "description": "ИИ чат",
+  "author": "aqua",
+  "isDesktopOnly": false
+}
