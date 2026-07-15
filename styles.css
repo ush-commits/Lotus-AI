@@ -1,0 +1,1474 @@
+.lotus-view-content,
+.lotus-view-content * {
+  box-sizing: border-box;
+  letter-spacing: 0;
+}
+
+.lotus-view-content {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 0 !important;
+}
+
+.lotus-shell {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--text-normal);
+  background: var(--background-primary);
+}
+
+.lotus-chat-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 6px 10px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--background-modifier-border);
+  background: var(--background-primary);
+}
+
+.lotus-icon-button {
+  display: inline-flex;
+  flex: 0 0 36px;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  color: var(--text-muted);
+  background: transparent;
+  box-shadow: none;
+}
+
+.lotus-icon-button:hover,
+.lotus-icon-button:focus-visible {
+  color: var(--text-normal);
+  background: var(--background-modifier-hover);
+}
+
+.lotus-icon-button:disabled {
+  opacity: 0.4;
+}
+
+.lotus-icon-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.lotus-chat-title {
+  flex: 1 1 160px;
+  min-width: 0;
+  max-width: 360px;
+  overflow: hidden;
+  padding: 5px 7px;
+  border: 0;
+  color: var(--text-normal);
+  font-size: var(--font-ui-medium);
+  font-weight: var(--font-semibold);
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: transparent;
+  box-shadow: none;
+}
+
+.lotus-chat-title:hover,
+.lotus-chat-title:focus-visible {
+  background: var(--background-modifier-hover);
+}
+
+.lotus-folder-button {
+  display: inline-flex;
+  flex: 0 1 240px;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  max-width: 260px;
+  height: 34px;
+  padding: 0 9px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  background: var(--background-secondary);
+  box-shadow: none;
+}
+
+.lotus-folder-button span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lotus-folder-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.lotus-folder-button.is-locked {
+  cursor: default;
+}
+
+.lotus-selection-controls {
+  display: flex;
+  flex: 1 1 380px;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  min-width: 220px;
+  max-width: 100%;
+}
+
+.lotus-selection-controls select,
+.lotus-composer-toolbar select {
+  width: auto;
+  min-width: 90px;
+  max-width: 180px;
+  height: 34px;
+  overflow: hidden;
+  border-radius: 6px;
+  text-overflow: ellipsis;
+}
+
+.lotus-body {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.lotus-history-panel {
+  display: flex;
+  flex: 0 0 clamp(340px, 26vw, 420px);
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  padding: 8px;
+  border-right: 1px solid var(--background-modifier-border);
+  background: var(--background-secondary);
+  z-index: 5;
+}
+
+.lotus-history-top {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  gap: 4px;
+}
+
+.lotus-history-top strong {
+  flex: 1;
+  padding-left: 6px;
+}
+
+.lotus-history-panel > input {
+  width: 100%;
+  height: 36px;
+  margin: 4px 0 8px;
+}
+
+.lotus-history-list {
+  min-height: 0;
+  overflow: auto;
+}
+
+.lotus-history-entry {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-height: 54px;
+  margin-bottom: 3px;
+  overflow: visible;
+  border-radius: 6px;
+}
+
+.lotus-history-entry:hover,
+.lotus-history-entry.is-active {
+  background: var(--background-modifier-hover);
+}
+
+.lotus-history-entry.is-active {
+  box-shadow: inset 3px 0 0 var(--interactive-accent);
+}
+
+.lotus-history-panel button.lotus-history-open {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  min-height: 54px;
+  padding: 7px 8px;
+  overflow: visible;
+  border: 0;
+  border-radius: 6px;
+  color: var(--text-normal);
+  line-height: normal;
+  text-align: left;
+  background: transparent;
+  box-shadow: none;
+}
+
+.lotus-history-open span,
+.lotus-history-open small {
+  display: block;
+  overflow: hidden;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lotus-history-open span {
+  min-height: 1.35em;
+}
+
+.lotus-history-open small {
+  min-height: 1.35em;
+  color: var(--text-faint);
+}
+
+.lotus-history-section-label {
+  padding: 14px 8px 5px;
+  color: var(--text-faint);
+  font-size: var(--font-ui-smaller);
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+}
+
+.lotus-empty-list,
+.lotus-empty-settings {
+  padding: 16px 8px;
+  color: var(--text-muted);
+}
+
+.lotus-transcript {
+  flex: 1;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  overflow-anchor: none;
+  scrollbar-gutter: stable;
+  -webkit-overflow-scrolling: touch;
+}
+
+.lotus-scroll-down.lotus-icon-button {
+  position: absolute;
+  right: 16px;
+  bottom: 14px;
+  z-index: 4;
+  border: 1px solid var(--background-modifier-border);
+  color: var(--text-normal);
+  background: var(--background-primary);
+  box-shadow: var(--shadow-s);
+}
+
+.lotus-scroll-down[hidden] {
+  display: none;
+}
+
+.lotus-chat-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 32px;
+  color: var(--text-muted);
+}
+
+.lotus-chat-empty .lotus-mark {
+  margin-bottom: 8px;
+  color: var(--text-normal);
+  font-size: 22px;
+  font-weight: var(--font-semibold);
+}
+
+.lotus-message {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 18px max(18px, calc((100% - 880px) / 2));
+  border-bottom: 1px solid var(--background-modifier-border-hover);
+}
+
+.lotus-message-user {
+  background: var(--background-secondary-alt);
+}
+
+.lotus-message-assistant {
+  background: var(--background-primary);
+}
+
+.lotus-message-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  min-height: 26px;
+  margin-bottom: 6px;
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+  font-weight: var(--font-semibold);
+}
+
+.lotus-message-mode {
+  padding: 2px 5px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  color: var(--text-faint);
+  font-size: var(--font-ui-smaller);
+  font-weight: var(--font-normal);
+}
+
+.lotus-edited-icon {
+  display: inline-flex;
+  color: var(--text-faint);
+}
+
+.lotus-edited-icon svg {
+  width: 13px;
+  height: 13px;
+}
+
+.lotus-message-actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 1px;
+  margin-left: auto;
+  opacity: 0;
+  transition: opacity 100ms ease;
+}
+
+.lotus-message:hover .lotus-message-actions,
+.lotus-message:focus-within .lotus-message-actions {
+  opacity: 1;
+}
+
+.lotus-message-actions .lotus-icon-button {
+  flex-basis: 30px;
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+}
+
+.lotus-message-content {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  line-height: var(--line-height-normal);
+  white-space: pre-wrap;
+  -webkit-user-select: text !important;
+  user-select: text !important;
+  -webkit-touch-callout: default;
+}
+
+.lotus-message-content :is(a, .internal-link, .external-link) {
+  color: var(--text-accent) !important;
+  -webkit-text-fill-color: currentColor !important;
+  text-decoration: underline;
+  opacity: 1 !important;
+}
+
+.lotus-message-content :is(a, .internal-link, .external-link):hover {
+  color: var(--text-accent-hover) !important;
+  opacity: 1 !important;
+}
+
+.lotus-citation-link {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  width: auto;
+  max-width: min(100%, 28em);
+  height: auto;
+  min-height: 0;
+  margin: 0 0.12em;
+  padding: 1px 4px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  color: var(--text-muted);
+  background: var(--background-secondary);
+  box-shadow: none;
+  font-family: var(--font-interface);
+  font-size: 0.82em;
+  font-weight: var(--font-normal);
+  letter-spacing: 0;
+  line-height: 1.35;
+  text-align: left;
+  text-decoration: none;
+  vertical-align: 0.08em;
+  cursor: pointer;
+}
+
+.lotus-citation-link > :last-child {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lotus-citation-icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+}
+
+.lotus-citation-icon svg {
+  width: 11px;
+  height: 11px;
+}
+
+.lotus-citation-link:hover,
+.lotus-citation-link:focus-visible {
+  border-color: var(--interactive-accent);
+  color: var(--text-normal);
+  background: var(--background-modifier-hover);
+  box-shadow: none;
+}
+
+.lotus-file-mention {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  width: auto;
+  max-width: min(100%, 28em);
+  min-height: 0;
+  margin: 0 0.12em;
+  padding: 1px 4px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  color: var(--text-accent);
+  background: var(--background-secondary);
+  box-shadow: none;
+  font-family: var(--font-interface);
+  font-size: 0.88em;
+  font-weight: var(--font-normal);
+  letter-spacing: 0;
+  line-height: 1.35;
+  text-align: left;
+  vertical-align: 0.06em;
+  cursor: pointer;
+}
+
+.lotus-file-mention > :last-child {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lotus-file-mention:hover,
+.lotus-file-mention:focus-visible {
+  border-color: var(--interactive-accent);
+  color: var(--text-accent-hover);
+  background: var(--background-modifier-hover);
+  box-shadow: none;
+}
+
+.lotus-file-mention-icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+}
+
+.lotus-file-mention-icon svg {
+  width: 12px;
+  height: 12px;
+}
+
+.lotus-web-sources {
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid var(--background-modifier-border);
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+}
+
+.lotus-web-sources > summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  max-width: 100%;
+  cursor: pointer;
+  font-weight: var(--font-semibold);
+}
+
+.lotus-web-sources-icon {
+  display: inline-flex;
+}
+
+.lotus-web-sources-icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.lotus-web-sources ul {
+  margin: 8px 0 0;
+  padding-left: 22px;
+}
+
+.lotus-web-sources li {
+  margin: 4px 0;
+  overflow-wrap: anywhere;
+}
+
+.lotus-message-content pre,
+.lotus-message-content table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.lotus-message-content img,
+.lotus-message-content video {
+  max-width: 100%;
+  height: auto;
+}
+
+.lotus-message-assistant .lotus-message-content {
+  white-space: normal;
+}
+
+.lotus-message-content > :first-child {
+  margin-top: 0;
+}
+
+.lotus-message-content > :last-child {
+  margin-bottom: 0;
+}
+
+.lotus-message-error {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  gap: 9px;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--background-modifier-border);
+  border-left: 3px solid var(--color-red);
+  border-radius: 5px;
+  color: var(--text-normal);
+  background: var(--background-secondary);
+}
+
+.lotus-message-error-icon {
+  display: inline-flex;
+  padding-top: 1px;
+  color: var(--text-error);
+}
+
+.lotus-message-error-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.lotus-message-error-body {
+  min-width: 0;
+}
+
+.lotus-message-error-title {
+  margin-bottom: 2px;
+  color: var(--text-error);
+  font-size: var(--font-ui-small);
+  font-weight: var(--font-semibold);
+}
+
+.lotus-message-error-text {
+  overflow-wrap: anywhere;
+  line-height: var(--line-height-normal);
+  white-space: pre-wrap;
+}
+
+.lotus-thinking {
+  display: block;
+  min-height: 20px;
+  margin-top: 7px;
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+  font-variant-numeric: tabular-nums;
+}
+
+.lotus-interrupted {
+  margin-top: 8px;
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+}
+
+.lotus-message-references,
+.lotus-reference-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.lotus-message-references span,
+.lotus-reference-chip {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  min-height: 26px;
+  padding: 3px 7px;
+  overflow: hidden;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 5px;
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: var(--background-primary);
+}
+
+.lotus-source-link {
+  display: inline-flex;
+  align-items: center;
+  max-width: min(100%, 320px);
+  min-width: 0;
+  min-height: 26px;
+  padding: 2px 6px;
+  overflow: hidden;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  color: var(--text-accent);
+  -webkit-text-fill-color: currentColor;
+  font-size: var(--font-ui-smaller);
+  line-height: 1.3;
+  text-decoration: underline;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: var(--background-secondary);
+  box-shadow: none;
+}
+
+.lotus-source-link:hover,
+.lotus-source-link:focus-visible {
+  color: var(--text-accent-hover);
+  background: var(--background-modifier-hover);
+}
+
+.lotus-message-references .lotus-source-link {
+  max-width: 100%;
+}
+
+.lotus-used-files {
+  display: grid;
+  gap: 5px;
+  margin-top: 10px;
+  font-size: var(--font-ui-smaller);
+}
+
+.lotus-file-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+}
+
+.lotus-file-group-label {
+  margin-right: 2px;
+  color: var(--text-muted);
+}
+
+.lotus-file-more {
+  position: relative;
+}
+
+.lotus-file-more > summary {
+  padding: 3px 5px;
+  color: var(--text-accent);
+  cursor: pointer;
+  list-style: none;
+}
+
+.lotus-file-more-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.lotus-reference-chip span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lotus-reference-chip button {
+  width: 24px;
+  min-width: 24px;
+  height: 24px;
+  margin-left: 4px;
+  padding: 0;
+  border: 0;
+  color: var(--text-muted);
+  background: transparent;
+  box-shadow: none;
+}
+
+.lotus-activities {
+  margin-top: 14px;
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+.lotus-activities > summary {
+  padding: 9px 0;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: var(--font-ui-small);
+}
+
+.lotus-activity {
+  min-width: 0;
+  padding: 9px 0 9px 12px;
+  overflow: hidden;
+  border-left: 2px solid var(--background-modifier-border);
+}
+
+.lotus-activity.is-undone {
+  border-left-color: var(--text-faint);
+}
+
+.lotus-activity-success {
+  border-left-color: var(--color-green);
+}
+
+.lotus-activity-error,
+.lotus-activity-denied,
+.lotus-activity-cancelled {
+  border-left-color: var(--color-red);
+}
+
+.lotus-activity-awaiting-approval {
+  border-left-color: var(--color-yellow);
+}
+
+.lotus-activity-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  font-size: var(--font-ui-small);
+}
+
+.lotus-activity-head > span {
+  min-width: 0;
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+
+.lotus-activity-head .lotus-activity-undone {
+  padding: 1px 5px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  color: var(--text-faint);
+  font-size: var(--font-ui-smaller);
+}
+
+.lotus-path-button {
+  flex: 0 1 auto;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  padding: 2px 4px;
+  border: 0;
+  color: var(--text-accent);
+  text-decoration: underline;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: transparent;
+  box-shadow: none;
+}
+
+.lotus-activity-preview-details {
+  margin-top: 8px;
+}
+
+.lotus-activity-preview-details > summary {
+  padding: 6px 2px;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: var(--font-ui-small);
+}
+
+.lotus-activity-preview-details .lotus-change-preview,
+.lotus-activity-preview-details .lotus-diff-preview {
+  margin-top: 3px;
+}
+
+.lotus-diff-preview {
+  max-height: 320px;
+  margin: 9px 0 0;
+  padding: 10px;
+  overflow: auto;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 5px;
+  background: var(--code-background);
+}
+
+.lotus-diff-preview code {
+  padding: 0;
+  white-space: pre;
+  background: transparent;
+}
+
+.lotus-change-preview {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 9px;
+}
+
+.lotus-change-preview.is-single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.lotus-change-pane {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 5px;
+  background: var(--code-background);
+}
+
+.lotus-change-pane.is-before {
+  border-left: 3px solid var(--color-red);
+}
+
+.lotus-change-pane.is-after {
+  border-left: 3px solid var(--color-green);
+}
+
+.lotus-change-label {
+  padding: 7px 9px;
+  border-bottom: 1px solid var(--background-modifier-border);
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+  font-weight: var(--font-semibold);
+}
+
+.lotus-change-pane pre {
+  max-height: 260px;
+  margin: 0;
+  padding: 9px;
+  overflow: auto;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.lotus-change-pane code {
+  padding: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: transparent;
+}
+
+.lotus-approval-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.lotus-approval-actions button {
+  min-height: 34px;
+}
+
+.lotus-composer {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 8px;
+  padding: 8px max(10px, calc((100% - 900px) / 2)) max(8px, env(safe-area-inset-bottom));
+  border-top: 1px solid var(--background-modifier-border);
+  background: var(--background-primary);
+}
+
+.lotus-composer.is-full-access {
+  border-top-color: var(--color-yellow);
+}
+
+.lotus-composer-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  min-height: 38px;
+}
+
+.lotus-context-estimate {
+  min-height: 18px;
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+  line-height: 1.35;
+}
+
+.lotus-context-estimate.is-warning {
+  color: var(--text-error);
+}
+
+.lotus-file-mention-menu {
+  display: grid;
+  max-height: min(240px, 32vh);
+  overflow-y: auto;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  background: var(--background-primary);
+  box-shadow: var(--shadow-s);
+}
+
+.lotus-file-mention-menu button {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 7px;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  padding: 5px 8px;
+  border: 0;
+  border-radius: 0;
+  color: var(--text-normal);
+  background: transparent;
+  box-shadow: none;
+  text-align: left;
+}
+
+.lotus-file-mention-menu button:hover,
+.lotus-file-mention-menu button.is-selected {
+  background: var(--background-modifier-hover);
+  box-shadow: none;
+}
+
+.lotus-file-mention-labels {
+  display: grid;
+  min-width: 0;
+}
+
+.lotus-file-mention-name,
+.lotus-file-mention-path {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lotus-file-mention-name {
+  font-size: var(--font-ui-small);
+}
+
+.lotus-file-mention-path {
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+}
+
+.lotus-mode-control {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  flex: 0 0 auto;
+  width: max-content;
+  min-width: 164px;
+  height: 36px;
+  min-height: 36px;
+  padding: 2px;
+  overflow: hidden;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  background: var(--background-secondary);
+}
+
+.lotus-mode-control button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 72px;
+  height: 30px;
+  min-height: 0;
+  padding: 2px 9px;
+  border: 0;
+  border-radius: 4px;
+  color: var(--text-muted);
+  line-height: 1;
+  background: transparent;
+  box-shadow: none;
+}
+
+.lotus-mode-control button.is-active {
+  color: var(--text-normal);
+  background: var(--background-primary);
+  box-shadow: var(--shadow-s);
+}
+
+.lotus-access-warning {
+  margin-left: auto;
+  color: var(--color-yellow);
+  font-size: var(--font-ui-smaller);
+  font-weight: var(--font-semibold);
+}
+
+.lotus-input-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  margin-top: 0;
+  padding: 6px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  background: var(--background-primary);
+}
+
+.lotus-input-row:focus-within {
+  border-color: var(--background-modifier-border-focus);
+  box-shadow: 0 0 0 1px var(--background-modifier-border-focus);
+}
+
+.lotus-chat-input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  min-height: 62px;
+  max-height: 220px;
+  padding: 8px;
+  resize: none;
+  border: 0;
+  line-height: 1.45;
+  background: transparent;
+  box-shadow: none;
+}
+
+.lotus-chat-input:focus {
+  border: 0;
+  box-shadow: none;
+}
+
+.lotus-input-row .is-send {
+  color: var(--text-on-accent);
+  background: var(--interactive-accent);
+}
+
+.lotus-input-row .is-stop {
+  color: var(--text-error);
+  background: var(--background-modifier-error);
+}
+
+.lotus-settings-tabs {
+  display: flex;
+  gap: 4px;
+  margin: 0 0 18px;
+  border-bottom: 1px solid var(--background-modifier-border);
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.lotus-settings-tabs button {
+  padding: 8px 10px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  color: var(--text-muted);
+  background: transparent;
+  box-shadow: none;
+  white-space: nowrap;
+}
+
+.lotus-settings-tabs button.is-active {
+  border-bottom-color: var(--interactive-accent);
+  color: var(--text-normal);
+}
+
+.lotus-settings textarea {
+  width: min(640px, 100%);
+}
+
+.lotus-settings .setting-item-info {
+  flex: 1 1 260px;
+}
+
+.lotus-settings .setting-item-control {
+  flex: 1 1 420px;
+  min-width: min(100%, 320px);
+}
+
+.lotus-settings .setting-item-control input[type="text"],
+.lotus-settings .setting-item-control input[type="password"],
+.lotus-settings .setting-item-control input[type="url"] {
+  flex: 1 1 360px;
+  width: min(520px, 100%);
+  min-width: min(280px, 100%);
+}
+
+.lotus-code-input {
+  font-family: var(--font-monospace);
+}
+
+.lotus-header-row {
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) minmax(140px, 1.4fr) 34px;
+  gap: 6px;
+  margin: 6px 0 6px min(38%, 220px);
+}
+
+.lotus-header-row input {
+  width: 100%;
+  min-width: 0;
+}
+
+.lotus-header-row button {
+  width: 34px;
+  min-width: 34px;
+  padding: 0;
+}
+
+.lotus-setting-error {
+  min-height: 18px;
+  color: var(--text-error);
+  font-size: var(--font-ui-smaller);
+}
+
+.lotus-settings-section-title {
+  margin: 22px 0 4px;
+  font-size: var(--font-ui-medium);
+}
+
+.lotus-statistics-list .setting-item,
+.lotus-template-setting {
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+.lotus-stat-cost {
+  color: var(--text-normal);
+  font-variant-numeric: tabular-nums;
+  font-weight: var(--font-semibold);
+  white-space: nowrap;
+}
+
+.lotus-chat-statistics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 4px 0 0;
+  border-top: 1px solid var(--background-modifier-border);
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.lotus-chat-statistic {
+  min-width: 0;
+  padding: 8px 6px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.lotus-chat-statistic:nth-child(odd) {
+  border-right: 1px solid var(--background-modifier-border);
+}
+
+.lotus-chat-statistic:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+.lotus-chat-statistic dt {
+  margin: 0 0 2px;
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+  line-height: 1.25;
+}
+
+.lotus-chat-statistic dd {
+  margin: 0;
+  overflow: hidden;
+  color: var(--text-normal);
+  font-size: var(--font-ui-medium);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (min-width: 700px) {
+  .lotus-chat-statistics {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .lotus-chat-statistic:nth-child(odd) {
+    border-right: 0;
+  }
+
+  .lotus-chat-statistic:not(:nth-child(4n)) {
+    border-right: 1px solid var(--background-modifier-border);
+  }
+
+  .lotus-chat-statistic:nth-last-child(-n + 4) {
+    border-bottom: 0;
+  }
+}
+
+.lotus-template-setting {
+  padding-top: 6px;
+}
+
+.lotus-save-folder-label {
+  margin: -8px 0 12px;
+  padding-left: var(--size-4-3);
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+
+.lotus-advanced-settings {
+  margin-top: 20px;
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+.lotus-advanced-settings > summary {
+  padding: 14px 0;
+  cursor: pointer;
+  font-weight: var(--font-semibold);
+}
+
+.lotus-prompt-input,
+.lotus-modal-search {
+  width: 100%;
+}
+
+.lotus-prompt-input {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.lotus-model-discovery-list {
+  max-height: min(55vh, 500px);
+  margin-top: 8px;
+  overflow: auto;
+  border-top: 1px solid var(--background-modifier-border);
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.lotus-check-row {
+  display: grid;
+  grid-template-columns: 24px minmax(120px, 1fr) minmax(100px, auto) auto;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 5px;
+}
+
+.lotus-check-row:hover {
+  background: var(--background-modifier-hover);
+}
+
+.lotus-muted {
+  color: var(--text-faint);
+  font-size: var(--font-ui-smaller);
+}
+
+@media (hover: none), (max-width: 700px) {
+  .lotus-change-preview {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lotus-message-meta {
+    flex-wrap: wrap;
+  }
+
+  .lotus-message-actions {
+    margin-left: auto;
+    opacity: 1;
+  }
+
+  .lotus-message-actions .lotus-icon-button {
+    flex-basis: 40px;
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+  }
+
+  .lotus-approval-actions button {
+    min-height: 40px;
+  }
+
+  .lotus-icon-button {
+    flex-basis: 40px;
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+  }
+
+  .lotus-chat-header {
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 4px 6px;
+  }
+
+  .lotus-chat-title {
+    flex-basis: calc(100% - 176px);
+    min-width: 0;
+    max-width: none;
+  }
+
+  .lotus-folder-button {
+    order: 3;
+    flex: 1 1 120px;
+    min-width: 0;
+    max-width: none;
+  }
+
+  .lotus-selection-controls {
+    order: 4;
+    flex: 2 1 230px;
+    justify-content: stretch;
+    min-width: 0;
+  }
+
+  .lotus-selection-controls select {
+    flex: 1;
+    min-width: 0;
+    max-width: none;
+  }
+
+  .lotus-history-panel {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: min(340px, 88vw, 100%);
+    max-width: 100%;
+    box-shadow: var(--shadow-l);
+  }
+
+  .lotus-message {
+    padding: 14px 12px;
+  }
+
+  .lotus-scroll-down.lotus-icon-button {
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .lotus-composer {
+    gap: 7px;
+    padding-right: 6px;
+    padding-left: 6px;
+  }
+
+  .lotus-composer-toolbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    min-height: 40px;
+  }
+
+  .lotus-composer-toolbar select {
+    width: 100%;
+    min-width: 0;
+    max-width: 180px;
+  }
+
+  .lotus-mode-control {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .lotus-access-warning {
+    grid-column: 1 / -1;
+    margin-left: 0;
+  }
+
+  .lotus-chat-input {
+    min-height: 82px;
+  }
+
+  .lotus-settings .setting-item {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .lotus-settings .setting-item-info,
+  .lotus-settings .setting-item-control {
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+  }
+
+  .lotus-settings .setting-item-control {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .lotus-settings .setting-item-control input[type="text"],
+  .lotus-settings .setting-item-control input[type="password"],
+  .lotus-settings .setting-item-control input[type="url"] {
+    flex-basis: 100%;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+  }
+
+  .lotus-header-row {
+    grid-template-columns: minmax(90px, 1fr) minmax(100px, 1fr) 40px;
+    margin-left: 0;
+  }
+
+  .lotus-check-row {
+    grid-template-columns: 24px minmax(100px, 1fr) auto;
+  }
+
+  .lotus-check-row code {
+    grid-column: 2 / -1;
+  }
+}
+
+@media (max-width: 430px) {
+  .lotus-approval-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lotus-approval-actions button {
+    width: 100%;
+    min-width: 0;
+    padding-right: 8px;
+    padding-left: 8px;
+    white-space: normal;
+  }
+
+  .lotus-selection-controls {
+    flex-basis: 100%;
+  }
+
+  .lotus-selection-controls select:nth-child(3) {
+    max-width: 105px;
+  }
+
+  .lotus-mode-control button {
+    min-width: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lotus-message-actions {
+    transition: none;
+  }
+}
